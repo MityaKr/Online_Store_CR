@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title>Online Magazin</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		  rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css">
+
+	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="node_modules/vue-resource/dist/vue-resource.js"></script>
+
+</head>
+<body>
+
+<div class="app">
+<div id="menu" v-b-modal.modal-center>
+	<h2 style="margin-left: 30px">{{ costSum }}$</h2>
+	<button @click="" id="go" class="btn btn-success" style="margin-top: 5px;">
+		<i class="material-icons">shopping_cart</i>
+	</button>
+</div>
+
+<div id="filter1">
+	<button class="btn btn-primary" @click="catShow=!catShow;firmShow = false">Category</button>
+	<button class="btn btn-primary" @click="firmShow=!firmShow;catShow = false">Firm</button>
+	<button class="btn btn-primary" @click="filt=3;firmShow = false;catShow= false">All</button>
+</div>
+
+<div id="filter">
+	<button v-if="catShow" v-for="cat in category" class="btn btn-warning" @click="filt=cat">{{ cat }}</button>
+	<button v-if="firmShow" v-for="fm in firm" class="btn btn-warning" @click="filt=fm">{{ fm }}</button>
+</div>
+
+<div id="tovar">
+	<tov-container :style="tov.onCart?'border:solid':'border-width:0px'" v-for="tov, index in tovar" v-if="filt==tov.category||filt==tov.firm||filt==3" :tovar="tov"></tov-container>
+
+	
+</div>
+
+    <div>
+        <!-- Modal Component -->
+        <b-modal size="lg" id="modal-center" centered title="Shopping Cart" ok-title="Buy" ok-only ok-disabled="true">
+            <div id="tovar">
+                <tov-container v-for="tov, index in tovar" v-if="tov.onCart" :tovar="tov" cart="true"></tov-container>
+            </div>
+        </b-modal>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script src="node_modules/vue/dist/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
+<script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
+

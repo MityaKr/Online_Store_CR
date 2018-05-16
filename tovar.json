@@ -1,0 +1,112 @@
+{
+  "tovars" : [
+    {
+      "name": "Hleb",
+      "value": 12,
+      "cost": 5,
+      "onCart": 0,
+      "category": "Product",
+      "firm": "Masung",
+      "img": "http://www.calorizator.ru/sites/default/files/imagecache/product_512/product/bread-46.jpg"
+    },
+    {
+      "name": "Fen",
+      "value": 6,
+      "cost": 200,
+      "onCart": 0,
+      "category": "Technics",
+      "firm": "PufCom",
+      "img": "https://img.mvideo.ru/Pdb/20030352b.jpg"
+    },
+    {
+      "name": "Tomat",
+      "value": 10,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Product",
+      "firm": "LG",
+      "img": "http://www.zanfiz.ru/wp-content/uploads/2013/10/%D0%9F%D0%BE%D0%BC%D0%B8%D0%B4%D0%BE%D1%80.jpg"
+    },
+    {
+      "name": "Pilesos",
+      "value": 3,
+      "cost" : 600,
+      "onCart": 0,
+      "category": "Technics",
+      "firm": "PufCom",
+      "img": "http://s.ek.ua/jpg_zoom1/580624.jpg"
+    },
+    {
+      "name": "Bulicika",
+      "value": 15,
+      "cost" : 7,
+      "onCart": 0,
+      "category": "Product",
+      "firm": "Nokia",
+      "img": "https://lavka.t-bone.com.ua/wp-content/uploads/2017/03/80g-pshenichnaia-t-bone.jpg"
+    },
+    {
+      "name": "Divan",
+      "value": 2,
+      "cost" : 1000,
+      "onCart": 0,
+      "category": "Furniture",
+      "firm": "Masung",
+      "img": "https://www.ikea.com/ru/ru/images/products/bigdeo-divan-krovat-mestnyj-seryj__0199719_PE358429_S4.JPG"
+    },
+    {
+      "name": "Torcher",
+      "value": 5,
+      "cost" : 200,
+      "onCart": 0,
+      "category": "Furniture",
+      "firm": "LG",
+      "img": "http://svetonov.ru/system/product_images/attachments/57b7/1db1/3ce5/1b5e/2600/07d1/large/n-light-820-01-05.jpg?1471618481"
+    },
+    {
+      "name": "Tumbocika",
+      "value": 3,
+      "cost": 600,
+      "onCart": 0,
+      "category": "Furniture",
+      "firm": "Nokia",
+      "img": "https://images.ua.prom.st/795252803_w0_h0_pkt_2_venge.jpg"
+    },
+    {
+      "name": "Cehol",
+      "value": 20,
+      "cost": 60,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Kozel",
+      "img": "https://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/M/QT/MQTE2/MQTE2?wid=572&hei=572&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1516740189776"
+    },
+    {
+      "name": "Povodok",
+      "value": 30,
+      "cost": 10,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Kozel",
+      "img": "http://www.jet-set.ru/photo-big/160003+160004_ph.jpg"
+    },
+    {
+      "name": "Multivarka",
+      "value": 5,
+      "cost": 500,
+      "onCart": 0,
+      "category": "Technics",
+      "firm": "Nokia",
+      "img": "https://static.eldorado.ru/photos/71/711/215/99/new_71121599_l_953.jpeg"
+    },
+    {
+      "name": "PowerBank",
+      "value": 15,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Nokia",
+      "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    }
+  ]
+}
