@@ -29,9 +29,6 @@ var tovarContainer = {
 };
 
 
-
-//tovar.forEach(tovar => { console.log(x.firstname, x.lastname); });
-
 var form = new Vue({
 	el: '.app',
 	data:{
