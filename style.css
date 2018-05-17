@@ -1,5 +1,6 @@
 #body{
 	background-color: #bfbdbd;
+	margin-top: 64px;
 }
 .container{
 	border-width: 5px;
@@ -80,4 +81,7 @@ img{
 }
 #cart_btn{
 	margin-right: 20px;
+}
+.mr-sm-2{
+	border-radius: 5px;
 }

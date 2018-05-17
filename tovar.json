@@ -107,6 +107,123 @@
       "category": "Accessories",
       "firm": "Nokia",
       "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    },
+    {
+      "name": "PowerBank",
+      "value": 15,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Nokia",
+      "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    },
+    {
+      "name": "PowerBank",
+      "value": 15,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Nokia",
+      "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    },
+    {
+      "name": "PowerBank",
+      "value": 15,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Nokia",
+      "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    },
+    {
+      "name": "PowerBank",
+      "value": 15,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Nokia",
+      "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    },
+    {
+      "name": "PowerBank",
+      "value": 15,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Nokia",
+      "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    },
+    {
+      "name": "PowerBank",
+      "value": 15,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Nokia",
+      "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    },
+    {
+      "name": "PowerBank",
+      "value": 15,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Nokia",
+      "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    },
+    {
+      "name": "PowerBank",
+      "value": 15,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Nokia",
+      "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    },
+    {
+      "name": "PowerBank",
+      "value": 15,
+      "cost": 30,
+      "onCart": 0,
+      "category": "Accessories",
+      "firm": "Nokia",
+      "img": "https://lakembashop.com.au/wp-content/uploads/2017/04/aa.jpg"
+    }
+  ],
+  "languages": [
+    {
+      "langName": "EN",
+      "save": "Save",
+      "category": "Categories",
+      "cat": ["Product", "Technics", "Furniture", "Accessories"],
+      "firma": "Firm",
+      "firm": ["Masung", "PufCom", "LG", "Nokia", "Kozel"],
+      "all" : "All",
+      "total": "Total",
+      "search": "Search",
+      "buy": "Buy"
+    },
+    {
+      "langName": "RU",
+      "save": "Сохранить",
+      "category": "Категории",
+      "cat": ["Продукты", "Техника", "Мебель", "Аксессуары"],
+      "firma": "Фирма",
+      "all" : "Всё",
+      "total": "Итого",
+      "search": "Поиск",
+      "buy": "Заказать"
+    },
+    {
+      "langName": "RO",
+      "save": "Salveaza",
+      "category": "Categorii",
+      "cat": ["Producte", "Tehnica", "Mobila", "Accesorii"],
+      "firma": "Firme",
+      "all" : "Toate",
+      "total": "Total",
+      "search": "Cauta",
+      "buy": "Cumpara"
     }
   ]
 }

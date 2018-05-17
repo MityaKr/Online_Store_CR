@@ -18,7 +18,7 @@
 <div class="app">
 
 <!--==========Navigate bar=========================-->
-	<b-navbar toggleable="md" type="dark" variant="dark">
+	<b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
 
 		<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -30,58 +30,58 @@
 				<button @click="" id="cart_btn" v-b-modal.modal-center class="btn btn-success" style="margin-top: 5px;">
 					<i class="material-icons">shopping_cart</i>
 				</button>
-				<b-navbar-brand>Total:{{costSum}}$</b-navbar-brand>
+				<b-navbar-brand>{{lang[L].total}}: {{costSum}}$</b-navbar-brand>
 			</b-navbar-nav>
 
-			<b-dropdown text="Categories" style="margin-left:10px">
-				<b-dropdown-item v-for="cat in category" @click="filt=cat">{{ cat }}</b-dropdown-item>
+			<b-dropdown :text="lang[L].category" style="margin-left:10px">
+				<b-dropdown-item v-for="c, i in lang[0].cat" @click="filt=c">{{ lang[L].cat[i] }}</b-dropdown-item>
 			</b-dropdown>
-			<b-dropdown text="Firm" style="margin-left:10px">
-				<b-dropdown-item v-for="fm in firm" @click="filt=fm">{{ fm }}</b-dropdown-item>
+			<b-dropdown :text="lang[L].firma" style="margin-left:10px">
+				<b-dropdown-item v-for="fm, i in lang[0].firm" @click="filt=fm">{{ fm }}</b-dropdown-item>
 			</b-dropdown>
 
-			<b-button size="m" class="" @click="filt=3">All</b-button>
+			<b-button size="m" class="" @click="filt=3">{{lang[L].all}}</b-button>
 			<!-- Right aligned nav items -->
 			<b-navbar-nav class="ml-auto">
 
 				<b-nav-form>
-					<b-form-input v-model="search" size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
-					<b-button size="sm" class="my-2 my-sm-0">Search</b-button>
+					<input class="mr-sm-2" @blur="searchCount=false" @focus="searchCount=true" autofocus :placeholder="lang[L].search" id="inp" v-model="search">
 				</b-nav-form>
 
-				<b-nav-item-dropdown text="Lang" right>
-					<b-dropdown-item href="#">EN</b-dropdown-item>
-					<b-dropdown-item href="#">ES</b-dropdown-item>
-					<b-dropdown-item href="#">RU</b-dropdown-item>
-					<b-dropdown-item href="#">FA</b-dropdown-item>
+				<b-nav-item-dropdown :text="lang[L].langName" right>
+					<b-dropdown-item @click="L=0">EN</b-dropdown-item>
+					<b-dropdown-item @click="L=1">RU</b-dropdown-item>
+					<b-dropdown-item @click="L=2">RO</b-dropdown-item>
 				</b-nav-item-dropdown>
 
 				<b-nav-item-dropdown right>
-					<!-- Using button-content slot -->
 					<template slot="button-content">
 						<em>User</em>
 					</template>
-					<b-dropdown-item href="#">Admin Panel</b-dropdown-item>
-					<b-dropdown-item href="#">Signout</b-dropdown-item>
+					<b-dropdown-item v-b-modal.modal1>Admin</b-dropdown-item>
+					<b-dropdown-item @click="pass=''">User</b-dropdown-item>
 				</b-nav-item-dropdown>
 			</b-navbar-nav>
 
 		</b-collapse>
 	</b-navbar>
-<!--=====================================-->
+<!--===================Show Pass Modal==================-->
+		<b-modal v-if="!admin" id="modal1" title="Log-In">
+			<input type="password" :style="admin?'border-color:grey':'border-color:red'" v-model="pass"></input>
+		</b-modal>
+
 
 <div id="tovar">
 	<tov-container :style="tov.onCart?'border:solid':'border-width:0px'"
 				   v-for="tov, index in tovar"
-				   v-if="filt==tov.category||filt==tov.firm||filt==3||searchFunc(tov.name)"
+				   v-if="filt==tov.category||filt==tov.firm||filt==3||(tov.name.toLowerCase().indexOf(search.toLowerCase()) + 1)"
 				   :tovar="tov">
 	</tov-container>
 
 </div>
-
     <div>
         <!-- Modal Component -->
-        <b-modal size="lg" id="modal-center" centered title="Shopping Cart" ok-title="Buy" ok-only ok-disabled="true">
+        <b-modal size="lg" id="modal-center" centered title="Shopping Cart" :ok-title="lang[L].buy" ok-only ok-disabled="true">
             <div id="tovar">
                 <tov-container v-for="tov, index in tovar" v-if="tov.onCart" :tovar="tov" cart="true"></tov-container>
             </div>
