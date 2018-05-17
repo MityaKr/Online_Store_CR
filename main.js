@@ -33,6 +33,7 @@ var form = new Vue({
 	el: '.app',
 	data:{
 		tovar: [],
+        search:'',
 		costSum: 0,
 		catShow: false,
 		firmShow: false,
@@ -42,10 +43,20 @@ var form = new Vue({
 		firm: ['Masung', 'PufCom', 'LG', 'Nokia', 'Kozel'],
 
 	},
+    methods:{
+        searchFunc : function (name) {
+            var ch=0;
+            if((name.toLowerCase().indexOf(this.search.toLowerCase())+1)&&(this.search!="")){ch=1; return true;}
+            else if(ch){ ch=0; this.filt=3; return false;}
+        }
+    },
     components: {
 	  'tov-container' : tovarContainer
     },
 	updated: function(){
+
+	    if(this.search!="") this.filt=0;
+        //else this.filt=3;
 
 		this.costSum = this.tovar.reduce((a, b) => {
 				return Number(a) + Number(b.cost) * Number(b.onCart);
@@ -58,7 +69,9 @@ var form = new Vue({
             .then(function(response) {
                 form.tovar = response.data;
             });
-	}
+	},
+    computed: function () {
+    }
 
 
 });
