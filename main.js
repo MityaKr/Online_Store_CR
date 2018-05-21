@@ -14,6 +14,8 @@ class tovarPush {
     }
 }
 
+console.log("A");
+
 var tovarContainer = {
     props: ['tovar', 'cart'],
     template: '<b-card-group class="tovContainer">\n' +
@@ -51,6 +53,9 @@ var tovarContainer = {
 
 var form = new Vue({
 	el: '.app',
+    components: {
+        'tov-container' : tovarContainer
+    },
 	data:{
 		tovar: [],
         lang: [],
@@ -58,8 +63,6 @@ var form = new Vue({
         ifind: 0,
         L: 0,
 		costSum: 0,
-		filt: 3,
-        searchCount: false,
 		onShop: [],
         pass: '',
         admin: false
@@ -73,22 +76,31 @@ var form = new Vue({
                 .catch(function (error) {
                     console.log(error);
                 });*/
+        },
+        filter: function (cont) {
+            var container = document.getElementsByClassName('tCont');
+            this.tovar.forEach(function (tov, i) {
+                    if(tov.category!=cont&&tov.firm!=cont) container[i].style.display='none'
+                    else container[i].style.display='block';
+            });
+        },
+        showAll: function () {
+            var container = document.getElementsByClassName('tCont');
+            this.tovar.forEach((c, i) => container[i].style.display='block');
         }
     },
-    components: {
-	  'tov-container' : tovarContainer
-    },
 	updated: function(){
-	    if(this.pass=='admin'){
-	        this.admin=true;
-        } else
+        /*var container = document.getElementsByClassName('tCont');
+        this.tovar.forEach(function (tov, i) {
+            if(!tov.name.toLowerCase().indexOf(this.search.toLowerCase()) + 1) console.log("block")
+            else console.log('none');
+        });*/
 
-	    if(this.search!="") this.filt=0;
-        else if((this.search=="")&&this.searchCount)this.filt=3;
-
+        //===========Общая цена===================================
 		this.costSum = this.tovar.reduce((a, b) => {
 				return Number(a) + Number(b.cost) * Number(b.onCart);
 		}, 0);
+		//========================================================
 
     },
     created : function(){

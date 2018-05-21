@@ -11,6 +11,8 @@
 	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="node_modules/vue-resource/dist/vue-resource.js"></script>
+	<script src="node_modules/rx/dist/rx.all.min.js"></script>
+
 
 </head>
 <body id="body">
@@ -34,13 +36,13 @@
 			</b-navbar-nav>
 
 			<b-dropdown :text="lang[L].category" style="margin-left:10px">
-				<b-dropdown-item v-for="c, i in lang[0].cat" @click="filt=c">{{ lang[L].cat[i] }}</b-dropdown-item>
+				<b-dropdown-item v-for="c, i in lang[0].cat" @click="filter(c)">{{ lang[L].cat[i] }}</b-dropdown-item>
 			</b-dropdown>
 			<b-dropdown :text="lang[L].firma" style="margin-left:10px">
-				<b-dropdown-item v-for="fm, i in lang[0].firm" @click="filt=fm">{{ fm }}</b-dropdown-item>
+				<b-dropdown-item v-for="fm, i in lang[0].firm" @click="filter(fm)">{{ fm }}</b-dropdown-item>
 			</b-dropdown>
 
-			<b-button size="m" class="" @click="filt=3">{{lang[L].all}}</b-button>
+			<b-button size="m" class="" @click="showAll">{{lang[L].all}}</b-button>
 			<!-- Right aligned nav items -->
 			<b-navbar-nav class="ml-auto">
 
@@ -59,23 +61,24 @@
 						<em>User</em>
 					</template>
 					<b-dropdown-item v-b-modal.modal1>Admin</b-dropdown-item>
-					<b-dropdown-item @click="pass=''">User</b-dropdown-item>
+					<b-dropdown-item @click="admin=false">User</b-dropdown-item>
 				</b-nav-item-dropdown>
 			</b-navbar-nav>
 
 		</b-collapse>
 	</b-navbar>
 <!--===================Show Pass Modal==================-->
-		<b-modal v-if="!admin" id="modal1" title="Log-In">
-			<input type="password" :style="admin?'border-color:grey':'border-color:red'" v-model="pass"></input>
+		<b-modal v-if="!admin" id="modal1" title="Log-In" hide-footer>
+			<input style="width: 50%;margin-left: 25%" type="password" :style="admin?'border-color:grey':'border-color:red'" v-model="pass"></input>
 		</b-modal>
 
 
 <div id="tovar">
 	<tov-container :style="tov.onCart?'border:solid':'border-width:0px'"
 				   v-for="tov, index in tovar"
-				   v-if="filt==tov.category||filt==tov.firm||filt==3||(tov.name.toLowerCase().indexOf(search.toLowerCase()) + 1)"
-				   :tovar="tov">
+				   v-if="true"
+				   :tovar="tov"
+					class="tCont">
 	</tov-container>
 
 </div>
@@ -95,12 +98,13 @@
 
 
 
-
+<button id="btn">click</button>
 </div>
 
 
 
 
+<script src="https://unpkg.com/rxjs/bundles/rxjs.umd.min.js"></script>
 <script src="node_modules/vue/dist/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
 <script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
